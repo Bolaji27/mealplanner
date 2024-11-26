@@ -1,12 +1,40 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import {Hammersmith_One, Gravitas_One, Frank_Ruhl_Libre, Fanwood_Text} from "next/font/google";
 import "./globals.css";
+import Navigation from "./navigation/page";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
+const fan = Fanwood_Text({
+  weight:"400",
+  variable : "--font-fan",
+  style: "normal",
+  subsets: ["latin"]
+})
+
+const frank = Frank_Ruhl_Libre({
+  weight: "300",
+  subsets: ["latin"],
+  variable: "--font-frank"
+})
+const hammersmithOne = Hammersmith_One({
+  weight: '400',
+  subsets: ["latin"],
+  variable: "--font-hammersmith"
+});
+
+const gravistasOne = Gravitas_One({
+  weight: "400",
+  style: "normal",
+  subsets: ["latin"],
+  variable: "--font-gravitas"
+});
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -26,8 +54,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${hammersmithOne.variable} ${gravistasOne.variable} ${frank.variable} ${fan.variable} antialiased`}
       >
+          <div> 
+            <Navigation />
+          </div>
+
         {children}
       </body>
     </html>

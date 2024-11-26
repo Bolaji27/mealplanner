@@ -11,7 +11,17 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        redColor: "#AF0B0B",
+        blueBg : "#7A89A0",
+        blueText : "#4F5877",
+        darkenBlue : "#535252"
       },
+      fontFamily: {
+        frank: "var(--font-frank)",
+        gravitas : "var(--font-gravitas)",
+        hammersmith: "var(--font-hammersmith)",
+        fan: "var(--font-fan)"
+      }
     },
   },
   plugins: [],
