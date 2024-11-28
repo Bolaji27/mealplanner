@@ -21,3 +21,10 @@ body {
   margin-left: 24px;
   margin-right: 24px;
 }
+
+@font-face {
+  font-family: 'Lowan Old Style';
+  src: url('/fonts/Lowan-old-style.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

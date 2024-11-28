@@ -20,7 +20,11 @@ export default {
         frank: "var(--font-frank)",
         gravitas : "var(--font-gravitas)",
         hammersmith: "var(--font-hammersmith)",
-        fan: "var(--font-fan)"
+        fan: "var(--font-fan)",
+        inria: "var(--font-inria)",
+        lowan: ['Lowan Old Style', 'serif'],
+        gilda: "var(--font-gilda)",
+        courier: "var(--font-courier)"
       }
     },
   },

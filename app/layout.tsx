@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import {Hammersmith_One, Gravitas_One, Frank_Ruhl_Libre, Fanwood_Text} from "next/font/google";
+import {
+  Hammersmith_One,
+  Gravitas_One,
+  Frank_Ruhl_Libre,
+  Fanwood_Text,
+  Inria_Serif,
+  Gilda_Display,
+  Courier_Prime
+} from "next/font/google";
 import "./globals.css";
 import Navigation from "./navigation/page";
 
@@ -10,29 +18,47 @@ const geistSans = localFont({
   weight: "100 900",
 });
 
-const fan = Fanwood_Text({
+const courier = Courier_Prime({
   weight:"400",
-  variable : "--font-fan",
-  style: "normal",
-  subsets: ["latin"]
+  subsets:["latin"],
+  variable:"--font-courier"
 })
+
+const gilda = Gilda_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-gilda",
+});
+
+const inria = Inria_Serif({
+  weight: "300",
+  variable: "--font-inria",
+  subsets: ["latin"],
+});
+
+const fan = Fanwood_Text({
+  weight: "400",
+  variable: "--font-fan",
+  style: "normal",
+  subsets: ["latin"],
+});
 
 const frank = Frank_Ruhl_Libre({
   weight: "300",
   subsets: ["latin"],
-  variable: "--font-frank"
-})
+  variable: "--font-frank",
+});
 const hammersmithOne = Hammersmith_One({
-  weight: '400',
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-hammersmith"
+  variable: "--font-hammersmith",
 });
 
 const gravistasOne = Gravitas_One({
   weight: "400",
   style: "normal",
   subsets: ["latin"],
-  variable: "--font-gravitas"
+  variable: "--font-gravitas",
 });
 
 const geistMono = localFont({
@@ -54,11 +80,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${hammersmithOne.variable} ${gravistasOne.variable} ${frank.variable} ${fan.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${hammersmithOne.variable} ${gravistasOne.variable} ${frank.variable} ${fan.variable} ${inria.variable} ${gilda.variable} ${courier.variable} antialiased`}
       >
-          <div> 
-            <Navigation />
-          </div>
+        <div>
+          <Navigation />
+        </div>
 
         {children}
       </body>
