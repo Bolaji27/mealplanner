@@ -62,35 +62,41 @@ export default function SmallToNormal() {
         </div>
         <div className="flex flex-row gap-5 mt-5">
           <div className="flex flex-row gap-1 items-center w-full">
-            <label htmlFor="householdNo" className="w-full sm:text-base text-[12px]">
+            <label
+              htmlFor="householdNo"
+              className="w-full sm:text-base text-[12px]"
+            >
               HouseHold No
             </label>
             <input
               id="householdNo"
               name="househouldNo"
-              value="0"
               className="w-[28px] border border-black text-center"
             />
           </div>
           <div className="flex flex-row gap-1 items-center w-full">
-            <label htmlFor="Children" className="w-full sm:text-base text-[12px]">
+            <label
+              htmlFor="Children"
+              className="w-full sm:text-base text-[12px]"
+            >
               Children
             </label>
             <input
               id="Children"
               name="Children"
-              value="0"
               className="w-[28px] border border-black text-center"
             />
           </div>
           <div className="flex flex-row gap-1 items-center w-full">
-            <label htmlFor="Visitor" className="w-full sm:text-base text-[12px]">
+            <label
+              htmlFor="Visitor"
+              className="w-full sm:text-base text-[12px]"
+            >
               Visitor
             </label>
             <input
               id="Visitor"
               name="Visitor"
-              value="0"
               className="w-[28px] border border-black text-center"
             />
           </div>
@@ -124,7 +130,10 @@ export default function SmallToNormal() {
             </select>
           </section>
           <div className="flex flex-row w-full gap-3 mt-2 border border-black px-8 h-[32px] items-center">
-            <p className="w-full text-center sm:text-base text-[12px]"> HouseHold</p>
+            <p className="w-full text-center sm:text-base text-[12px]">
+              {" "}
+              HouseHold
+            </p>
             <div className="w-[36px] border border-black text-center h-6">
               0
             </div>
@@ -137,7 +146,10 @@ export default function SmallToNormal() {
           </div>
           <div className="flex flex-col justify-between mt-2 gap-2 ">
             <div className="flex flex-row items-center w-full gap-6 h-[32px]">
-              <select id="meal" className="border border-black w-full px-2 sm:text-base text-[12px]">
+              <select
+                id="meal"
+                className="border border-black w-full px-2 sm:text-base text-[12px]"
+              >
                 <option>Meal</option>
               </select>
               <CiCirclePlus size={28} />
@@ -152,13 +164,19 @@ export default function SmallToNormal() {
               <CiCirclePlus size={28} />
             </div>
             <div className="flex flex-row items-center w-full gap-6 h-[32px]">
-              <select id="fruits" className="border border-black w-full px-2 sm:text-base text-[12px]">
+              <select
+                id="fruits"
+                className="border border-black w-full px-2 sm:text-base text-[12px]"
+              >
                 <option>Fruits</option>
               </select>
               <CiCirclePlus size={28} />
             </div>
             <div className="flex flex-row items-center w-full gap-6 h-[32px]">
-              <select id="snacks" className="border border-black w-full px-2 sm:text-base text-[12px]">
+              <select
+                id="snacks"
+                className="border border-black w-full px-2 sm:text-base text-[12px]"
+              >
                 <option>Snacks</option>
               </select>
               <CiCirclePlus size={28} />
@@ -185,21 +203,31 @@ export default function SmallToNormal() {
         <div className="flex flex-col justify-between w-full mr-1">
           <div className="flex flex-row gap-2 h-8 items-center ">
             <div className="w-[24px] h-[24px] border rounded-full border-black"></div>
-            <div className="border w-full border-black pl-2 font-semibold sm:text-base text-[12px]">BreakFast</div>
+            <div className="border w-full border-black pl-2 font-semibold sm:text-base text-[12px]">
+              BreakFast
+            </div>
           </div>
           <div className="flex flex-row gap-2 w-full h-8 items-center">
             <div className="w-[24px] h-[24px] border rounded-full border-black"></div>
-            <div className="border border-black w-full pl-2 font-semibold sm:text-base text-[12px]">Lunch</div>
+            <div className="border border-black w-full pl-2 font-semibold sm:text-base text-[12px]">
+              Lunch
+            </div>
           </div>
           <div className="flex flex-row gap-2 h-8 items-center">
             <div className="w-[24px] h-[24px] border rounded-full border-black"></div>
-            <div className="border border-black w-full pl-2 font-semibold sm:text-base text-[12px]">Dinner</div>
+            <div className="border border-black w-full pl-2 font-semibold sm:text-base text-[12px]">
+              Dinner
+            </div>
           </div>
         </div>
       </div>
       <div className="flex flex-row justify-between h-6 mt-1 gap-1 mb-4">
-        <h3 className="w-full border border-black pl-1 font-semibold sm:text-base text-[12px]">Snacks</h3>
-        <h3 className="w-full border border-black pl-1 font-semibold sm:text-base text-[12px]">Beverage</h3>
+        <h3 className="w-full border border-black pl-1 font-semibold sm:text-base text-[12px]">
+          Snacks
+        </h3>
+        <h3 className="w-full border border-black pl-1 font-semibold sm:text-base text-[12px]">
+          Beverage
+        </h3>
         <div className="flex flex-row gap-2 w-full items-center">
           <div className="flex flex-row w-[82px] gap-1">
             <h3 className="font-semibold sm:text-base text-[12px]">Meal</h3>
@@ -209,7 +237,7 @@ export default function SmallToNormal() {
               <option>3</option>
             </select>
           </div>
-          <RiDeleteBin6Line size={18}/>
+          <RiDeleteBin6Line size={18} />
         </div>
       </div>
     </div>

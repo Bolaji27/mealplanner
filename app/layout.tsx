@@ -7,7 +7,8 @@ import {
   Fanwood_Text,
   Inria_Serif,
   Gilda_Display,
-  Courier_Prime
+  Courier_Prime,
+  Kaisei_HarunoUmi
 } from "next/font/google";
 import "./globals.css";
 import Navigation from "./navigation/page";
@@ -22,7 +23,14 @@ const courier = Courier_Prime({
   weight:"400",
   subsets:["latin"],
   variable:"--font-courier"
+});
+
+const kaisei = Kaisei_HarunoUmi({
+  weight:"400",
+  variable: '--font-kaisei',
+  subsets: ['latin']
 })
+
 
 const gilda = Gilda_Display({
   weight: "400",
@@ -80,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${hammersmithOne.variable} ${gravistasOne.variable} ${frank.variable} ${fan.variable} ${inria.variable} ${gilda.variable} ${courier.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${hammersmithOne.variable} ${gravistasOne.variable} ${frank.variable} ${fan.variable} ${inria.variable} ${gilda.variable} ${courier.variable} ${kaisei.variable} antialiased`}
       >
         <div>
           <Navigation />
