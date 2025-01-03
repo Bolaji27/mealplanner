@@ -9,7 +9,7 @@ import { FaRegEdit } from "react-icons/fa";
 export default function page() {
   return (
     <div className="mt-4 w-full xl:flex xl:flex-col lg:flex lg:flex-col md:flex md:flex-col sm:w-full ">
-       <h1 className="font-frank text-black text-center   xl:hidden lg:hidden md:hidden sm:hidden text-[28px] mb-4">
+       <h1 className="font-frank text-black text-center  xl:hidden lg:hidden md:hidden sm:hidden text-[28px] mb-4">
         Meal Family Planner
       </h1>
       <div className=" xl:flex xl:flex-row xl:gap-[20px] lg:flex md:flex lg:flex-row lg:gap-[20px] md:gap-[16px] md:flex-row sm:flex">
@@ -38,12 +38,12 @@ export default function page() {
         </div>
         <RightPage />
       </div>
-      <div className="xl:flex xl:flex-row xl:gap-[20px] lg:mt-10 md:flex md:flex-col sm:flex sm:flex-col sm:mt-4 flex flex-col">
+      <div className="xl:flex xl:flex-row xl:gap-[118px] xl:w-full lg:mt-10 md:flex md:flex-col sm:flex sm:flex-col sm:mt-4 flex flex-col">
         <div className="relative xl:w-full md:order-2 md:mt-4 xl:order-1 sm:order-2 sm:mt-4 order-2">
           <Image
             src={plate}
             alt="home plate"
-            className="xl:mt-4 xl:w-[686px] xl:h-[244px] lg:w-full md:w-full sm:w-full "
+            className="xl:mt-4 xl:w-full xl:h-[244px] lg:w-full md:w-full sm:w-full "
           />
           <ul className="flex text-black absolute xl:top-32 md:top-32 w-full justify-between  font-hammersmith xl:text-[24px] lg:text-[24px] lg:top-[150px] top-[52px] text-[12px] ">
             <li className="text-blueBg w-full">
@@ -57,10 +57,10 @@ export default function page() {
           </ul>
         </div>
         <div className=" lg:w-[480px] xl:w-full text-black lg:hidden xl:block md:order-1 md:mt-4  md:block xl:order-2 sm:order-1 order-1">
-        <h1 className="border-b text-center xl:text-[32px] lg:text-[32px] md:text-[32px] font-gravitas border-b-black text-black lg:hidden  md:block xl:hidden text-[20px] mt-4">
+        <h1 className="border-b text-center xl:text-[32px] lg:text-[32px] md:text-[32px] font-gravitas border-b-black text-black xl:block lg:hidden  md:block  text-[20px] ">
         Food for thought
       </h1>
-        <div className="xl:w-[568px] xl:ml-[118px] ">
+        <div className="xl:w-full  ">
           <div className="flex flex-col gap-5 px-2 border mt-4 rounded-lg bg-darkenBlue">
             <div className="flex flex-row gap-20">
               <p className="text-[20px]  text-white ">Mon</p>

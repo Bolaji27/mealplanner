@@ -1,7 +1,26 @@
+'use client'
 import React from "react";
 import FormattedDate from "@/components/formattedDate";
+import { useEffect, useState } from "react";
 
 export default function Meals() {
+    const [meal, setMeal] = useState([])
+    useEffect(() => {
+        const fetchMeals = async () => {
+          try {
+            const res = await fetch("http://localhost:3000/api/meal");
+            if (res.ok) {
+              const json = await res.json();
+              console.log(json);
+              setMeal(json);
+            }
+          } catch (error) {
+            console.log(error);
+          }
+        };
+        fetchMeals();
+      }, []);
+    
   return (
     <div className="text-black">
       <div className="flex justify-center items-center mb-5 gap-[40px] font-inria xl:text-[32px]">
@@ -61,7 +80,7 @@ export default function Meals() {
           </thead>
           <tbody>
             <tr>
-              <td className="border border-black"></td>
+              <td className="border border-black"> </td>
               <td className="border border-black"></td>
             </tr>
           </tbody>

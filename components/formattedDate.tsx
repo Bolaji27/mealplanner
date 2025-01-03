@@ -1,4 +1,6 @@
+"use client"
 import {format} from "date-fns";
+import { useState, useEffect } from "react";
 
 import React from 'react'
 
@@ -12,14 +14,17 @@ const formated = format(today, "do 'of' MMM, yyy")
   )
 }
 type FormattedTimeProps = {
-  classes?: string; // Define classes as an optional string
+  classes?: string,
+  fromDate: Date 
 };
-export function FormattedTime ({classes}: FormattedTimeProps) {
- const todayDate = Date();
+export function FormattedTime ({classes, fromDate}: FormattedTimeProps) {
+ const todayDate = new Date();
 const formattee = format(todayDate, "do, MMM, yyy");
+
+
   return (
     <div className={classes}>
-     {formattee}
+     {fromDate? format(fromDate, "do, MMM, yyy"): formattee}
     </div>
   )
 }

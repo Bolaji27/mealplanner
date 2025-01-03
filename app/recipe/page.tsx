@@ -25,8 +25,8 @@ export default function Recipe() {
         />
         <IoIosSearch size={28} />
       </div>
-      <div className="flex xl:flex-row lg:flex-col md:flex-col gap-12 mt-12">
-        <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col xl:gap-5 gap-2 xl:w-[1149px] w-full items-center">
+      <div className="flex xl:flex-row lg:flex-col md:flex-col gap-12 mt-12 items-center justify-center">
+        <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col xl:gap-5 gap-2 xl:w-full w-full items-center">
           <div className="border border-black rounded-full xl:w-[166px] lg:w-[159px] lg:h-[178px] h-[166px] font-inria xl:flex lg:flex md:flex items-center justify-center text-orange text-xl md:w-[94px] md:h-[178px] md:text-[18px] sm:hidden hidden">
             Fav <span className="text-blueBg ">recipes</span>
           </div>
