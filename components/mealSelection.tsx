@@ -70,12 +70,12 @@ export default function MealSelection({household, date, selection, id}:Selection
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit}>
-        <div className="flex gap-[58px] justify-center mb-5 text-2xl">
-          <p>Select Household</p>
+        <div className="flex gap-[58px] justify-center mb-5 text-2xl items-center">
+          <p className="xl:text-2xl lg:text-xl md:text-xl sm:text-sm text-sm">Select Household</p>
           <select
             name="householdno"
             id="householdno"
-            className="border border-black w-[156px] px-2 outline-none"
+            className="border border-black xl:w-[156px] lg:w-[156px] md:w-[156px] px-2 outline-none xl:text-2xl lg:text-2xl md:text-xl sm:text-sm text-sm h-[32px] sm:w-[88px] w-[88px]"
            onChange={handleSelect}
            value={submit.householdno}
 
@@ -98,7 +98,7 @@ export default function MealSelection({household, date, selection, id}:Selection
               id="meal"
               name="meal"
               placeholder="Add Meal"
-              className="border border-black h-[42px] text-xl pl-4 outline-none w-full"
+              className="border border-black h-[42px] pl-4 outline-none w-full xl:text-xl lg:text-xl md:text-xl sm:text-sm text-sm"
               onChange={handleInfo}
               value={submit.meal}
             />
@@ -111,7 +111,7 @@ export default function MealSelection({household, date, selection, id}:Selection
               id="beverage"
               name="beverages"
               placeholder="Add Beverage"
-              className="border border-black h-[42px] text-xl pl-4 outline-none w-full"
+              className="border border-black h-[42px] xl:text-xl lg:text-xl md:text-xl sm:text-sm text-sm xl:pl-4 lg:pl-4 md:pl-4 sm:pl-2 pl-2 outline-none w-full"
               onChange={handleInfo}
               value={submit.beverages}
             />
@@ -124,7 +124,7 @@ export default function MealSelection({household, date, selection, id}:Selection
               id="fruits"
               name="fruits"
               placeholder="Add Fruit"
-              className="border border-black h-[42px] text-xl pl-4 outline-none w-full"
+              className="border border-black h-[42px] xl:text-xl lg:text-xl md:text-xl sm:text-sm text-sm pl-4 outline-none w-full"
               onChange={handleInfo}
               value={submit.fruits}
             />
@@ -137,7 +137,7 @@ export default function MealSelection({household, date, selection, id}:Selection
               id="snack"
               name="snacks"
               placeholder="Add Snack"
-              className="border border-black h-[42px] text-xl pl-4 outline-none w-full"
+              className="border border-black h-[42px] xl:text-xl lg:text-xl md:text-xl sm:text-sm text-sm pl-4 outline-none w-full"
               onChange={handleInfo}
               value={submit.snacks}
             />
@@ -145,7 +145,7 @@ export default function MealSelection({household, date, selection, id}:Selection
         </div>
 
         {/* Submit Button */}
-        <button className="w-full text-center text-2xl border border-black h-[54px]" type="submit">
+        <button className="w-full text-center xl:text-2xl lg:text-2xl md:text-2xl sm:text-xl text-xl border border-black h-[54px]" type="submit">
           Submit
         </button>
       </form>

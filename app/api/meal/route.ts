@@ -77,12 +77,23 @@ export async function GET (req: Request) {
 
   const userId = payload.sub;
  
-  
+  const startOfDay = new Date();
+startOfDay.setUTCHours(0, 0, 0, 0);
+
+const endOfDay = new Date();
+endOfDay.setUTCHours(23, 59, 59, 999);
 try {
-    const getMeal = await Meal.findById(userId);
+    const getMeal = await Meal.find({userId:userId,  "households.date": { $gte: startOfDay, $lte: endOfDay }})
+    console.log(getMeal)
+    return NextResponse.json({
+        body: getMeal,
+        message:"meal was successfully collected",
+        status: 200
+    })
     
     
 } catch (error) {
+    return NextResponse.json(error);
     
 }
    

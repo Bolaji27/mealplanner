@@ -148,13 +148,14 @@ export default function Planner() {
       
 
       <form className="flex flex-col gap-5 pb-4" onSubmit={handleSubmit}>
-        <div className="xl:flex lg:flex md:flex xl:flex-row w-full gap-5 lg:flex-col md:flex-col sm:flex-col flex-col">
-          <div className="flex flex-col w-full border gap-4 border-black rounded-md lg:order-2 xl:order-1 md:order-2 sm:order-2 order-2 ">
-            <div className="flex flex-row gap-6 w-full  items-center px-2 mb-5 h-[66px]">
-              <h3 className="w-[196px] text-2xl md:text-xl">Planning for</h3>
-              <div className="w-full flex flex-row justify-between gap-[27px] text-xl ">
+        <div className="flex xl:flex-row w-full gap-5 lg:flex-col md:flex-col sm:flex-col flex-col">
+            <h3 className="xl:hidden lg:hidden md:hidden flex w-full text-xl justify-center">Meal Plan</h3>
+          <div className="flex flex-col w-full xl:border lg:border md:border xl:gap-4 lg:gap-4 md:gap-4 sm:gap-14 gap-12 border-black rounded-md lg:order-2 xl:order-1 md:order-2 sm:order-2 order-2 ">
+            <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col gap-6 w-full items-center px-2 mb-5 h-[66px]">
+              <h3 className="w-[196px] text-2xl md:text-xl sm:hidden hidden xl:flex lg:flex">Planning for</h3>
+              <div className="xl:w-full lg:w-full md:w-full sm:w-[188px] w-[188px] flex xl:flex-row lg:flex-row md:flex-row sm:flex-col justify-between xl:gap-[27px] lg:gap-[27px] md:gap-[27px] sm:gap-[12px] flex-col gap-2 text-xl  ">
                 <button
-                  className={`border border-black w-full h-[56px] md:text-base  ${
+                  className={`border border-black w-full xl:h-[56px] lg:h-[56px] md:h-[56px] sm:h-[32px] h-[32px] md:text-base sm:text-sm text-sm ${
                     active == "one" ? "text-redColor" : "text-black"
                   }`}
                   type="button"
@@ -163,7 +164,7 @@ export default function Planner() {
                   One course meal
                 </button>
                 <button
-                  className={`border border-black w-full h-[56px] md:text-base ${
+                  className={`border border-black w-full xl:h-[56px] lg:h-[56px] md:h-[56px] sm:h-[32px] h-[32px] md:text-base sm:text-sm text-sm ${
                     active == "two" ? "text-redColor" : "text-black"
                   }`}
                   type="button"
@@ -172,7 +173,7 @@ export default function Planner() {
                   Two course meal
                 </button>
                 <button
-                  className={`border border-black w-full h-[56px] md:text-base ${
+                  className={`border border-black w-full xl:h-[56px] lg:h-[56px] md:h-[56px] sm:h-[32px] h-[32px] md:text-base sm:text-sm text-sm ${
                     active == "three" ? "text-redColor" : "text-black"
                   }`}
                   type="button"
@@ -182,11 +183,11 @@ export default function Planner() {
                 </button>
               </div>
             </div>
-            <div className="flex flex-row gap-6 w-full justify-between px-2 h-[52px]">
-              <div className="flex flex-row gap-6 w-full items-center ">
+            <div className="flex flex-row xl:gap-6 lg:gap-6 md:gap-6 sm:gap-5 gap-2 w-full justify-between px-2 h-[52px]">
+              <div className="flex flex-row xl:gap-6 lg:gap-6 md:gap-6 sm:gap-2 gap-2 w-full items-center ">
                 <label
                   htmlFor="household"
-                  className="w-full text-2xl md:text-base "
+                  className="w-full xl:text-2xl lg:text-2xl md:text-base sm:text-sm text-sm"
                 >
                   Household No
                 </label>
@@ -194,15 +195,15 @@ export default function Planner() {
                   type="number"
                   id="household"
                   name="household"
-                  className="border border-black w-[120px] h-[52px] outline-none pl-2"
+                  className="border border-black xl:w-[120px] lg:w-[120px] md:w-[120px] sm:w-[32px] w-[32px] xl:h-[52px] lg:h-[52px] md:h-[52px] sm:h-[26px] outline-none pl-2 sm:text-sm text-sm"
                   onChange={handleChange}
                   value={formData.household}
                 />
               </div>
-              <div className="flex flex-row gap-6 w-full items-center">
+              <div className="flex flex-row xl:gap-6 lg:gap-6 md:gap-6 sm:gap-2 w-full items-center">
                 <label
                   htmlFor="children"
-                  className="w-full text-2xl text-center md:text-base"
+                  className="w-full xl:text-2xl lg:text-2xl text-center md:text-base sm:text-sm text-sm"
                 >
                   Children
                 </label>
@@ -210,15 +211,15 @@ export default function Planner() {
                   type="number"
                   id="children"
                   name="children"
-                  className="border border-black w-[120px] h-[52px] outline-none pl-2"
+                  className="border border-black xl:w-[120px] lg:w-[120px] md:w-[120px] sm:w-[32px] w-[32px] xl:h-[52px] lg:h-[52px] md:h-[52px] sm:h-[26px] outline-none pl-2 sm:text-sm text-sm"
                   onChange={handleChange}
                   value={formData.children}
                 />
               </div>
-              <div className="flex flex-row gap-6 w-full items-center">
+              <div className="flex flex-row xl:gap-6 lg:gap-6 md:gap-6 sm:gap-2 w-full items-center">
                 <label
                   htmlFor="visitor"
-                  className="w-full text-2xl text-center md:text-base"
+                  className="w-full xl:text-2xl lg:text-2xl text-center md:text-base sm:text-sm text-sm"
                 >
                   Visitor
                 </label>
@@ -226,28 +227,28 @@ export default function Planner() {
                   type="number"
                   id="visitor"
                   name="visitor"
-                  className="border border-black w-[120px] h-[52px] outline-none pl-2"
+                  className="border border-black xl:w-[120px] lg:w-[120px] md:w-[120px] sm:w-[32px] w-[32px] xl:h-[52px] lg:h-[52px] md:h-[52px] sm:h-[26px] outline-none pl-2 sm:text-sm text-sm"
                   onChange={handleChange}
                   value={formData.visitor}
                 />
               </div>
             </div>
-            <div className="w-full flex justify-end px-2">
+            <div className="w-full flex xl:justify-end lg:justify-end md:justify-end px-2 sm:justify-center justify-center">
               <button
-                className="flex border border-black w-[226px] items-center justify-center h-[44px] text-2xl font-semibold"
+                className="flex border border-black w-[226px] items-center justify-center xl:h-[44px] lg:h-[44px] md:h-[44px] sm:h-[36px] h-[36px] xl:text-2xl lg:text-2xl md:text-2xl sm:text-sm text-sm font-semibold"
                 type="submit"
               >
                 Start planning
               </button>
             </div>
           </div>
-          <div className="xl:w-[335px] xl:h-[274px] xl:flex xl:flex-col lg:w-[739px] md:w-[739px] md:h-[94px] border border-black xl:px-2 rounded-md lg:order-1  xl:order-2 md:order-1 sm:order-1 order-1  lg:flex lg:flex-row md:flex md:flex-row md:gap-6 md:px-2 lg:h-[120px] lg:gap-6 lg:pr-2  ">
-            <p className="xl:text-center xl:w-full text-2xl lg:w-[52px] lg:mt-9 xl:mt-0 md:w-[52px] md:text-xl md:mt-6">
+          <div className="xl:w-[335px] xl:h-[274px] flex xl:flex-col md:lg:w-[739px] md:w-[739px] md:h-[94px] sm:w-full sm:h-[61px]  xl:border lg:border md:border border-black  xl:px-2 rounded-md lg:order-1  xl:order-2 md:order-1 sm:order-1 order-1 lg:flex-row md:flex-row md:gap-6  sm:gap-6 gap-2  md:px-2 lg:h-[120px] lg:gap-6 lg:pr-2 sm:flex-row w-full flex-row ">
+            <p className="xl:text-center xl:w-full text-2xl lg:w-[52px] lg:mt-9 xl:mt-0 md:w-[52px] md:text-xl md:mt-6 sm:hidden hidden">
               Date
             </p>
-            <div className="flex flex-col  lg:w-full xl:w-full lg:mt-4 xl:mt-0 md:w-full ">
-              <p className="text-2xl font-semibold md:text-xl">From</p>
-              <div className="flex flex-row border border-black lg:px-1 items-center md:px-2 ">
+            <div className="flex flex-col w-full lg:mt-4 xl:mt-0 sm:gap-2 sm:h-[62px] gap-2 h-[62px]">
+              <p className="xl:text-2xl lg:text-2xl font-semibold md:text-xl text-sm">From</p>
+              <div className="flex flex-row border border-black lg:px-1 items-center md:px-2 sm:h-[38px] ">
                 <div className="w-full flex flex-row">
                   <div className="w-full  border-r border-black">
                     <label htmlFor="fromDay" />
@@ -290,9 +291,9 @@ export default function Planner() {
                 <FaRegCalendarAlt size={20} className="w-6" />
               </div>
             </div>
-            <div className="flex xl:flex-col lg:flex-col md:flex-col lg:w-full xl:w-full lg:mt-4 md:w-full">
-              <p className="text-2xl font-semibold md:text-xl">To</p>
-              <div className="flex flex-row border border-black lg:px-1 items-center md:px-2 xl:w-full">
+            <div className="flex xl:flex-col lg:flex-col md:flex-col sm:flex-col flex-col w-full  lg:mt-4 sm:gap-2 sm-h-[62px] gap-2 h-[62px] ">
+              <p className="xl:text-2xl lg:text-2xl font-semibold md:text-xl text-sm">To</p>
+              <div className="flex flex-row border border-black lg:px-1 items-center md:px-2 xl:w-full sm:h-[38px]">
                 <div className="w-full flex flex-row">
                   <div className="w-full border-r border-black">
                     <label htmlFor="toDay" />
@@ -350,7 +351,7 @@ export default function Planner() {
               onClick={handleBackDate}
             />
             <FormattedTime
-              classes="xl:text-2xl lg:text-2xl md:text-xl"
+              classes="xl:text-2xl lg:text-2xl md:text-xl sm:text-md text-sm"
               fromDate={currentDate}
             />
             <FaLongArrowAltRight
@@ -360,7 +361,7 @@ export default function Planner() {
             />
           </div>
           <div className="w-full flex items-center px-4">
-            <select className="w-full text-2xl outline-none" onChange={handleChangeSelect} value={selection} >
+            <select className="w-full xl:text-2xl lg:text-2xl md:text-2xl sm:text-md text-md outline-none " onChange={handleChangeSelect} value={selection} >
               {body.mealtype === "one" ? (
                 <option value="morning">Morning</option>
               ) : body.mealtype === "two" ? (
