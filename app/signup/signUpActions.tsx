@@ -10,8 +10,9 @@ export async function signUpActions(prevState:string, formData: FormData): Promi
     const email = formData.get("email");
    const password = formData.get("password");
   
+   const outApi = process.env.NEXT_PUBLIC_API_URL
  
-   const res = await fetch("http://localhost:3000/api/signup", {
+   const res = await fetch(`${outApi}/api/signup`, {
         method: "POST",
         headers: {"Content-Type":"Application/json"},
         body: JSON.stringify({firstname, lastname, email, password})

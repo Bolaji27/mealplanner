@@ -35,8 +35,9 @@ if (!image) {
   };
 
   try {
+    const shareApi = process.env.NEXT_PUBLIC_API_URL
     
-    const res = await fetch("http://localhost:3000/api/recipe", {
+    const res = await fetch(`${shareApi}/api/recipe`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newData)});

@@ -18,7 +18,7 @@ export async function POST (Req: Request) {
         return Response.json({message: "invalid credentials, try again", status:400})
        }
       
-       const isCorrectPassword = bcrypt.compare(password, user.password);
+       const isCorrectPassword = await bcrypt.compare(password, user.password);
     
        if(!isCorrectPassword) {
         return Response.json({message: "invalid credentials, try again", status:400})

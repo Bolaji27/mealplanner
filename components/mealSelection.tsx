@@ -50,8 +50,9 @@ export default function MealSelection({household, date, selection, id}:Selection
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) =>{
    e.preventDefault();
 
+   const selectionApi = process.env.NEXT_PUBLIC_API_URL
    try {
-    const res = await fetch(`http://localhost:3000/api/meal`, {
+    const res = await fetch(`${selectionApi}/api/meal`, {
     method: "PUT",
     headers: {'Content-Type' : 'application/json'},
     body: JSON.stringify(data)

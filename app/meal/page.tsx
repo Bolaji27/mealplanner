@@ -43,11 +43,11 @@ export default function Meals() {
     children: 0,
     visitor: 0,
   });
-
+const mealApi = process.env.NEXT_PUBLIC_API_URL
   useEffect(() => {
     const fetchMeals = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/meal");
+        const res = await fetch(`${mealApi}/api/meal`);
         if (res.ok) {
           const json = await res.json();
 

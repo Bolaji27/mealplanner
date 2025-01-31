@@ -6,8 +6,8 @@ import { redirect } from "next/navigation";
 export async function signInAction (prevState:string, formData: FormData): Promise<string> {
   const email = formData.get("email");
   const password = formData.get("password");
-
-  const res = await fetch("http://localhost:3000/api/signin", {
+  const signApi = process.env.NEXT_PUBLIC_API_URL
+  const res = await fetch(`${signApi}/api/signin`, {
     method: "POST",
     headers: {"Content-Type":"Application/json"},
     body: JSON.stringify({ email, password})

@@ -112,10 +112,11 @@ export default function Planner() {
     visitor: Number(`${formData.visitor}`),
   };
 
+const planApi = process.env.NEXT_PUBLIC_API_URL
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await fetch("api/meal", {
+      const res = await fetch(`${planApi}/api/meal`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(Data),
