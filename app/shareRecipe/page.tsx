@@ -1,7 +1,7 @@
 "use server" 
 import { RecipeSubmit } from "./shareServer"
 
-export default function RecipeShare() {   
+export default async function RecipeShare() {   
   
 
 
