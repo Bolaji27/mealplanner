@@ -120,14 +120,14 @@ export default function Meals() {
       }
     };
     fetchMeals();
-  }, []);
+  }, [meal]);
 
   
 
   return (
     <div className="text-black">
       <div className="flex justify-center items-center mb-5 gap-[40px] font-inria xl:text-[32px]">
-        <h2 className="font-inria border-r  border-black px-1">Today's meal</h2>
+        <h2 className="font-inria border-r  border-black px-1">Today&apos;s meal</h2>
         <FormattedDate />
       </div>
       <div className=" w-full text-xl font-inria xl:hidden lg:hidden md:hidden ">
