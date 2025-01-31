@@ -1,4 +1,4 @@
- 
+"use server" 
 import { RecipeSubmit } from "./shareServer"
 
 export default function RecipeShare() {   
