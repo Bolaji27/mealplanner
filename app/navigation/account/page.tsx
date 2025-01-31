@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Signin from "@/app/signin/page"
-import Signup from "@/app/signup/page"
+
+
 export default function Account() {
   return (
     <ul className="flex  xl:w-[220px] xl:gap-[40px] lg:w-[220px] lg:gap-[12px] md:w-[220px] md:gap-[8px] w-[95px] gap-1 sm:text-[20px] text-[12px]">

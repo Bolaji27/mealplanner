@@ -2,7 +2,6 @@
 import React from "react";
 import FormattedDate from "@/components/formattedDate";
 import { useEffect, useState } from "react";
-import { error } from "console";
 
 export default function Meals() {
   type Household = {
@@ -12,12 +11,6 @@ export default function Meals() {
     snack: string;
     fruit: string;
     date: Date;
-  };
-
-  type Planner = {
-    householdNo: number;
-    children: number;
-    visitor: number;
   };
 
   type mealType = {
@@ -129,9 +122,7 @@ export default function Meals() {
     fetchMeals();
   }, []);
 
-  useEffect(()=>{
-    console.log(meal)
-  })
+  
 
   return (
     <div className="text-black">
@@ -145,13 +136,13 @@ export default function Meals() {
           <div className="sm:flex sm:flex-row flex flex-row sm:w-full w-full sm:h-[34px] h-[34px] mb-4 sm:gap-1 gap-1">
             <p className="sm:w-[104px] w-[104px]">Main Dish</p>
             <div className="border border-black sm:w-full w-full">
-              {meal.morning.meal.join(',')}
+              {meal.morning.meal.join(`,`)}
             </div>
           </div>
           <div className="sm:flex sm:flex-row flex flex-row sm:w-full w-full sm:h-[34px] h-[34px] sm:gap-1 gap-1">
             <p className="sm:w-[104px] w-[104px]">Others</p>
             <div className="sm:w-full w-full border border-black">
-            {meal.morning.others.join(', ')}
+            {meal.morning.others.join(`,`)}
             </div>
           </div>
         </div>

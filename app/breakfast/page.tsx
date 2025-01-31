@@ -11,7 +11,7 @@ import { useRecipeContext } from "@/Context/contextApi";
  
 
 export default function Breakfast () {
- const {breakfast, setBreakfast, setDinners,setLunch} = useRecipeContext();
+ const {breakfast, setBreakfast} = useRecipeContext();
 
  type RecipeType = {
     title: string,
@@ -40,21 +40,13 @@ export default function Breakfast () {
                 case 'breakfast':
                     setBreakfast(prev => [...prev, newRecipe]);
                     break;
-                case 'lunch':
-                    setLunch(prev => [...prev, newRecipe]);
-                    break;
-                case 'dinners':
-                    setDinners(prev => [...prev, newRecipe]);
-                    break;
-                default:
-                    break;
             }
              })}
             }
     
 
     fetchData();
-        },[]);
+        },[setBreakfast]);
 
 
     console.log(breakfast);

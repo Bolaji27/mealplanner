@@ -37,35 +37,35 @@ export default async function page({params}:{params: Promise<{mealFood: string}>
     const mealFood = (await params).mealFood;
   return (
     <div className ='text-black mt-10 font-kaisei'>{
-            mealFood === "beverages" ?  <div className="flex flex-col gap-8 mb-2 w-full"><div className="xl:flex lg:flex md:flex flex-row gap-2 sm:hidden hidden"> {beverages.hotDrinks.map((beverage)=>(
-        <Image src={beverage} alt="beverage" className="  xl:w-full lg:w-full md:w-full w-[100px]" width={300} priority/>
+            mealFood === "beverages" ?  <div className="flex flex-col gap-8 mb-2 w-full"><div className="xl:flex lg:flex md:flex flex-row gap-2 sm:hidden hidden"> {beverages.hotDrinks.map((beverage, index)=>(
+        <Image key={index}   src={beverage} alt="beverage" className="  xl:w-full lg:w-full md:w-full w-[100px]" width={300} priority/>
     )
     )}</div>
 
     <div className="xl:flex lg:flex md:flex flex-row gap-2 sm:hidden hidden">
-    {beverages.mildDrinks.map((beverage)=>(
-        <Image src={beverage} alt="beverage" className=" xl:w-full lg:w-full md:w-full w-[100px]" />
+    {beverages.mildDrinks.map((beverage, index)=>(
+        <Image key={index} src={beverage} alt="beverage" className=" xl:w-full lg:w-full md:w-full w-[100px]" />
     )
     )}
     </div>
-    <div className="xl:hidden lg:hidden md:hidden sm:flex hidden flex-row sm:w-full w-full">{drinks.hotDrinks.map((drink)=> (
-        <Image src={drink} alt="drink" priority className="w-full"/>
+    <div className="xl:hidden lg:hidden md:hidden sm:flex hidden flex-row sm:w-full w-full">{drinks.hotDrinks.map((drink, index)=> (
+        <Image key={index}  src={drink} alt="drink" priority className="w-full"/>
     ))}</div>
-    <div className="xl:hidden lg:hidden md:hidden sm:flex hidden flex-row sm:w-full w-full">{drinks.mildDrinks.map((drink)=> (
-        <Image src={drink} alt="drink" className ="w-full "/> 
+    <div className="xl:hidden lg:hidden md:hidden sm:flex hidden flex-row sm:w-full w-full">{drinks.mildDrinks.map((drink, index)=> (
+        <Image key={index} src={drink} alt="drink" className ="w-full "/> 
     ))}</div>
-     <div className="xl:hidden lg:hidden md:hidden sm:flex hidden flex-row sm:w-full w-full ">{drinks.moreDrinks.map((drink)=> (
-        <Image src={drink} alt="drink" className ="w-full "/>
+     <div className="xl:hidden lg:hidden md:hidden sm:flex hidden flex-row sm:w-full w-full ">{drinks.moreDrinks.map((drink, index)=> (
+        <Image key={index}  src={drink} alt="drink" className ="w-full "/>
     ))}</div>
 
-<div className="xl:hidden lg:hidden md:hidden sm:hidden flex flex-row sm:w-full w-full gap-2">{smDrinks.moreDrinks.map((drink)=> (
-        <Image src={drink} alt="drink" className ="w-full "/>
+<div className="xl:hidden lg:hidden md:hidden sm:hidden flex flex-row sm:w-full w-full gap-2">{smDrinks.moreDrinks.map((drink, index)=> (
+        <Image key={index} src={drink} alt="drink" className ="w-full "/>
     ))}</div>
-    <div className="xl:hidden lg:hidden md:hidden sm:hidden flex flex-row sm:w-full w-full gap-2 ">{smDrinks.lilDrinks.map((drink)=> (
-        <Image src={drink} alt="drink" className ="w-full "/>
+    <div className="xl:hidden lg:hidden md:hidden sm:hidden flex flex-row sm:w-full w-full gap-2 ">{smDrinks.lilDrinks.map((drink, index)=> (
+        <Image key={index} src={drink} alt="drink" className ="w-full "/>
     ))}</div>
-    <div className="xl:hidden lg:hidden md:hidden sm:hidden flex flex-row sm:w-full w-full gap-2 ">{smDrinks.mildDrinks.map((drink)=> (
-        <Image src={drink} alt="drink" className ="w-full "/>
+    <div className="xl:hidden lg:hidden md:hidden sm:hidden flex flex-row sm:w-full w-full gap-2 ">{smDrinks.mildDrinks.map((drink, index)=> (
+        <Image key={index} src={drink} alt="drink" className ="w-full "/>
     ))}</div>
 
     </div>:""} </div>

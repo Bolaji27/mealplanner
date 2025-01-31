@@ -1,6 +1,5 @@
 
 import { ConnectDb } from "@/util/db";
-import { NextResponse } from "next/server";
 import User from "@/models/userModel";
 
 

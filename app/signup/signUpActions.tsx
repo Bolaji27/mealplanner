@@ -1,16 +1,16 @@
 'use server'
 
 import { redirect } from "next/navigation";
-import { json } from "node:stream/consumers";
 
-export async function signUpActions(prevState:any, formData: FormData): Promise<string> {
+
+export async function signUpActions(prevState:string, formData: FormData): Promise<string> {
   
     const firstname = formData.get("firstname");
    const lastname = formData.get("lastname");
     const email = formData.get("email");
    const password = formData.get("password");
   
-  const port = process.env.PORT
+ 
    const res = await fetch("http://localhost:3000/api/signup", {
         method: "POST",
         headers: {"Content-Type":"Application/json"},

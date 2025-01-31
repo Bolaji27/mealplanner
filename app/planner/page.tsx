@@ -4,7 +4,6 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { FormattedTime } from "@/components/formattedDate";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import MealSelection from "@/components/mealSelection";
 import PlannedMeal from "@/components/plannedMeal";
 import { useState } from "react";

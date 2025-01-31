@@ -24,7 +24,7 @@ export async function POST(req:Request) {
     const secret = new TextEncoder().encode(process.env.JWT_SECRET
    )
   const jwt = token;
-  const { payload, protectedHeader } = await jose.jwtVerify(jwt, secret);
+  const { payload } = await jose.jwtVerify(jwt, secret);
 
   const userId = payload.sub;
  
@@ -48,7 +48,7 @@ export async function PUT (req:Request) {
    }
 
   try {
-    const mealUpdateId = await Meal.findByIdAndUpdate(id,
+     await Meal.findByIdAndUpdate(id,
         {$push: {households:{date,typeOfDay,householdId,meal,beverage,fruit,snack}}},
         {new: true}
        );
@@ -61,7 +61,7 @@ export async function PUT (req:Request) {
 }
 
 
-export async function GET (req: Request) {
+export async function GET () {
 
     const cookie = await cookies();
     const valueCookie = cookie.get('Authorization');
@@ -73,7 +73,7 @@ export async function GET (req: Request) {
     const secret = new TextEncoder().encode(process.env.JWT_SECRET
    )
   const jwt = token;
-  const { payload, protectedHeader } = await jose.jwtVerify(jwt, secret);
+  const { payload} = await jose.jwtVerify(jwt, secret);
 
   const userId = payload.sub;
  

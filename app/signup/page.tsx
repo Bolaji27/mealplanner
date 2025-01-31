@@ -7,7 +7,7 @@ import { PiEyeSlashLight } from "react-icons/pi";
 import firstImage from "@/public/images/time.png";
 import secondImage from "@/public/images/quality-signup.png";
 import google from "@/public/images/google.png";
-import { useState } from "react";
+
 import {signUpActions }from "./signUpActions";
 import { useActionState} from "react";
 

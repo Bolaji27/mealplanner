@@ -1,44 +1,12 @@
- "use client"
+ 
 import { RecipeSubmit } from "./shareServer"
-import { useRecipeContext } from "@/Context/contextApi";
-export default function RecipeShare() {
-    const {setBreakfast, setLunch, setDinners, breakfast,lunch , dinners} = useRecipeContext();
-   
+
+export default function RecipeShare() {   
    const handleSubmit = async (formData: FormData) => {
-    const result = await RecipeSubmit(formData);
-    
-    
-    // switch(result.recipe.type) {
-    //   case "breakfast": 
-    //     setBreakfast(prev => ({
-    //       ...prev,
-    //       title: result.recipe.title,
-    //       image: result.recipe.image,
-    //       ingredients: [result.recipe.ingredients],
-    //       preparations: result.recipe.preparations
-    //     }));
-    //     break;
-    //   case "lunch":
-    //     setLunch(prev => ({
-    //         ...prev,
-    //         title: result.recipe.title,
-    //         image:  result.recipe.image,
-    //         ingredients: [ result.recipe.ingredients],
-    //         preparations: result.recipe.preparations
-    //       }));;
-    //   case "dinners":
-    //     setDinners(prev => ({
-    //         ...prev,
-        //     title: result.recipe.title,
-        //     image: result.recipe.image,
-        //     ingredients: [result.recipe.ingredients],
-        //     preparations: result.recipe.preparations
-        //   }));
-        // break;
+    await RecipeSubmit(formData);
     }
 
-//   };
-//   console.log(breakfast)
+
 
     return (<div className="text-black mt-6 flex justify-center flex-col items-center ">
         <h3 className="font-hammersmith text-[24px]">Share Your <span className="text-redColor">recipe</span></h3>

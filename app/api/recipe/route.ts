@@ -4,7 +4,7 @@ import * as jose from 'jose';
 import User from "@/models/userModel";
 import Recipe from "@/models/recipeModel";
 import { ConnectDb } from "@/util/db";
-import { mongo } from "mongoose";
+
 
 
 export async function POST (req:Request) {
@@ -41,7 +41,7 @@ export async function GET() {
     const secret = new TextEncoder().encode(process.env.JWT_SECRET
    )
   const jwt = token;
-  const { payload, protectedHeader } = await jose.jwtVerify(jwt, secret);
+  const { payload} = await jose.jwtVerify(jwt, secret);
   const userId = payload.sub;
 
   const user = await User.findById(userId);

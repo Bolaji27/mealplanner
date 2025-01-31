@@ -1,9 +1,8 @@
 import Link from "next/link";
-import Meals from "@/app/meal/page";
+
 import Account from "../account/page";
-import Planner from "@/app/planner/page";
-import Recipe from "@/app/recipe/page";
-import Shop from "@/app/shop/page";
+
+
 import { cookies } from "next/headers";
 import { logoutAction } from "./logoutAction";
 

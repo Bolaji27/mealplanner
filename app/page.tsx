@@ -1,4 +1,4 @@
-import Navigation from "./navigation/page";
+
 import Image from "next/image";
 import bgPicture from "@/public/images/Phone.png";
 import { AiFillHeart } from "react-icons/ai";
