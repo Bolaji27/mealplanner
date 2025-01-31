@@ -12,7 +12,7 @@ export async function signInAction (prevState:any, formData: FormData): Promise<
     headers: {"Content-Type":"Application/json"},
     body: JSON.stringify({ email, password})
    });
-   if(!res) {
+   if(!res.ok) {
     throw new Error("cant log user, internal server error")
    }
     const json = await res.json();

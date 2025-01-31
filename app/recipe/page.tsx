@@ -11,6 +11,7 @@ import dinnerRecipe from "@/public/images/recipeMeal/Dinner.png";
 import beveragePng from "@/public/images/drink.png";
 import beverages from "@/public/images/recipeMeal/Bevarage.png";
 import { FaRegHeart } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Recipe() {
   return (
@@ -21,7 +22,7 @@ export default function Recipe() {
           id="productSearch"
           name="productSearch"
           placeholder="Search"
-          className="w-full text-2xl"
+          className="w-full text-2xl outline-none"
         />
         <IoIosSearch size={28} />
       </div>
@@ -54,41 +55,42 @@ export default function Recipe() {
         </div>
 
       <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col text-black mt-14 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-8 gap-8 w-full">
-        <div className="w-full text-center ">
+        <Link className="w-full text-center" href='/breakfast'>
           <Image src={breakfastRecipe} alt="breakfast" className="w-full"/>
           <h1 className="font-lowan text-3xl mt-2">BreakFast</h1>
           <p className="font-inria xl:text-2xl lg:text-2xl md:text-2xl sm:text-xl text-base mt-2">
             View Selections of breakfast choices and how its made tasty for
             you!!
           </p>
-        </div>
-        <div className="w-full text-center">
+        </Link>
+        <Link className="w-full text-center" href="/lunch">
           <Image src={lunchRecipe} alt="lunch" className="w-full"/>
           <h1 className="font-lowan text-3xl mt-2">Lunch</h1>
           <p className="font-inria xl:text-2xl lg:text-2xl md:text-2xl sm:text-xl text-base mt-2">
             Cant go wrong our lunch boxes selection of recipes!!
           </p>
-        </div>
-        <div className="flex flex-col w-full text-center">
+        </Link>
+        <Link className="flex flex-col w-full text-center" href="/dinner">
           <Image src={dinnerRecipe} alt="dinner" className="w-full"/>
           <h1 className="font-lowan text-3xl mt-2">Dinner</h1>
           <p className="font-inria xl:text-2xl lg:text-2xl md:text-2xl sm:text-xl text-base mt-2">
             Dinner well served, the family loves it!!
           </p>
-        </div>
+        </Link>
       </div>
 
       <div className="text-black flex xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col w-full mt-32 xl:h-[459px] h-[395px] gap-5">
         <div className="w-full">
           <h3 className="xl:text-3xl lg:text-3xl md:text-3xl sm:text-base font-inria sm:text-center text-center sm:w-full xl:mb-0 lg:mb-0 md:mb-0 sm:mb-5 mb-5">
             Looking to SHARE your
-            <span className="font-inria italic text-xl">recipe ?</span>
+            <Link href="/shareRecipe" className="font-inria italic text-xl">recipe ?</Link>
           </h3>
           <p className="h-[324px] mt-[140px] text-3xl w-[444px] xl:ml-[235px] my-auto  font-kaisei xl:block lg:block md:block sm:hidden hidden">
             Check for some amazing juice to digest your meal and energy
           </p>
         </div>
         <div className="w-full">
+            <Link href='/recipe/beverages'>
           <div className="flex flex-row gap-5 mb-4 items-center sm:w-full w-full">
             <Image src={beveragePng} alt="beverage" className="w-[40px] " />
             <p className="text-3xl font-inria">Beverages</p>
@@ -98,6 +100,7 @@ export default function Recipe() {
             alt="beverages"
             className="xl:h-[459px] h-[395px] w-full"
           />
+           </Link>
         </div>
         <p className="h-[324px] xl:mt-[140px] lg:mt-[140px] md:mt-[140px] xl:text-3xl lg:text-3xl md:text-3xl xl:w-[444px] lg:w-[444px] md:w-[444px] sm:w-full w-full xl:ml-[235px] my-auto  font-kaisei xl:hidden lg:hidden md:hidden sm:block block sm:text-xl text-xl mt-4">
             Check for some amazing juice to digest your meal and energy

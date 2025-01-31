@@ -12,6 +12,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Navigation from "./navigation/page";
+import { MyContxt } from "@/Context/contextApi";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -94,7 +95,11 @@ export default function RootLayout({
           <Navigation />
         </div>
 
+        <MyContxt>
+
         {children}
+
+        </MyContxt>
       </body>
     </html>
   );

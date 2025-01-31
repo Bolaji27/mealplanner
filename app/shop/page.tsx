@@ -30,9 +30,9 @@ export default function Shop() {
       </div>
 
   <div className="flex flex-row justify-between xl:w-[1156px] lg:w-[838px] xl:mx-auto lg:mx-auto w-full mb-[80px]">
-    <Image src={tesco} alt="tesco logo"/>
-    <Image src={morrisons} alt="morrions logo"/>
-    <Image src={sainsburys} alt="sainsbury's logo"/>
+    <Image src={tesco} alt="tesco logo" width={60} height={60}/>
+    <Image src={morrisons} alt="morrions logo" width={60} height={60}/>
+    <Image src={sainsburys} alt="sainsbury's logo" width={60} height={60}/>
   </div>
 
   <div className="flex flex-col xl:w-[450px] lg:w-[482px] md:w-[528px] w-full xl:ml-[98px] lg:ml-[98px]">
