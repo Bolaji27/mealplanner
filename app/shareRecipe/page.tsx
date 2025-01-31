@@ -2,10 +2,7 @@
 import { RecipeSubmit } from "./shareServer"
 
 export default function RecipeShare() {   
-   const handleSubmit = async (formData: FormData) => {
-    await RecipeSubmit(formData);
-    }
-
+  
 
 
     return (<div className="text-black mt-6 flex justify-center flex-col items-center ">
@@ -13,7 +10,7 @@ export default function RecipeShare() {
         <p className="font-lowan ">As always we appreciate you sharing your recipe</p>
         <p className="font-inria">Please fill in the form below</p>
        
-        <form action={handleSubmit}>
+        <form action={RecipeSubmit}>
        
             <div className="flex w-full flex-col gap-4 mt-2">
             <div className="flex w-full flex-col gap-4">
