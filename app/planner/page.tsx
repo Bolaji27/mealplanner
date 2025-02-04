@@ -112,7 +112,7 @@ export default function Planner() {
     visitor: Number(`${formData.visitor}`),
   };
 
-const planApi = process.env.NEXT_PUBLIC_API_URL
+const planApi = process.env.APR_URL || "http://localhost:3000";
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {

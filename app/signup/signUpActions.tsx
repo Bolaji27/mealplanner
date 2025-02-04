@@ -10,7 +10,7 @@ export async function signUpActions(prevState:string, formData: FormData): Promi
     const email = formData.get("email");
    const password = formData.get("password");
   
-   const outApi = process.env.NEXT_PUBLIC_API_URL
+   const outApi = process.env.APR_URL || "http://localhost:3000";
  
    const res = await fetch(`${outApi}/api/signup`, {
         method: "POST",

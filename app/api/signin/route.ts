@@ -6,12 +6,13 @@ import { ConnectDb } from "@/util/db";
 
 export async function POST (Req: Request) {
     try {
-        await ConnectDb();
+       
         const {email, password} = await Req.json();
 
         if(!email || !password) {
             return Response.json({message: "Please fill in all fields"});
         }
+        await ConnectDb();
        const user = await User.findOne({email});
        
        if(!user) {

@@ -1,10 +1,31 @@
 import mongoose from "mongoose";
 
-export async function ConnectDb () {
-const db = process.env.DB_HOST;
-if(!db) {
-    return console.log("database not connected")
+interface ConnectionCache {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
 }
-   await mongoose.connect(db);
-    console.log("database connected")
+
+declare global {
+  var mongoose: ConnectionCache | undefined;
+}
+
+const cached: ConnectionCache = global.mongoose ?? {
+  conn: null,
+  promise: null,
+};
+
+if (!global.mongoose) {
+  global.mongoose = cached;
+}
+
+export async function ConnectDb() {
+  if (cached.conn) return cached.conn;
+
+  const db = process.env.DB_HOST;
+  if (!db) throw new Error("DB_HOST not found");
+
+  const promise = mongoose.connect(db);
+  cached.promise = promise;
+  cached.conn = await promise;
+  return cached.conn;
 }

@@ -43,7 +43,7 @@ export default function Meals() {
     children: 0,
     visitor: 0,
   });
-const mealApi = process.env.NEXT_PUBLIC_API_URL
+const mealApi = process.env.APR_URL || "http://localhost:3000";
   useEffect(() => {
     const fetchMeals = async () => {
       try {
