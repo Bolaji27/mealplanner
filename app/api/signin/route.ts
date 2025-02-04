@@ -1,4 +1,4 @@
-
+ "use server"
 import User from "@/models/userModel";
 import bcrypt from "bcryptjs";
 import * as jose from 'jose';
