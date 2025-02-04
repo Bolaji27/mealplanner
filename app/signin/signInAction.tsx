@@ -6,8 +6,8 @@ import { redirect } from "next/navigation";
 export async function signInAction (prevState:string, formData: FormData): Promise<string> {
   const email = formData.get("email");
   const password = formData.get("password");
- const vercelApi = process.env.VERCEL_API;
-  const res = await fetch(`${vercelApi}/api/signin`, {
+ 
+  const res = await fetch(`${process.env.VERCEL_API}/api/signin`, {
     method: "POST",
     headers: {"Content-Type":"Application/json"},
     body: JSON.stringify({ email, password})
