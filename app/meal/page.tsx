@@ -43,11 +43,11 @@ export default function Meals() {
     children: 0,
     visitor: 0,
   });
-const mealApi = process.env.APR_URL || "http://localhost:3000";
+
   useEffect(() => {
     const fetchMeals = async () => {
       try {
-        const res = await fetch(`${mealApi}/api/meal`);
+        const res = await fetch(`/api/meal`);
         if (res.ok) {
           const json = await res.json();
 
