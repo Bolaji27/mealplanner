@@ -74,6 +74,9 @@ export async function GET () {
    )
   const jwt = token;
   const { payload} = await jose.jwtVerify(jwt, secret);
+  if(!payload) {
+    return NextResponse.json("error, no payload");
+  }
 
   const userId = payload.sub;
  

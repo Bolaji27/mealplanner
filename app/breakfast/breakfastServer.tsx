@@ -2,7 +2,7 @@ export async function BreakastData() {
 
 
     try {
-        const res = await fetch(`/api/recipe`);
+        const res = await fetch(`${process.env.VERCEL_API}/api/recipe`);
         if(!res.ok) {
             throw new Error("error, cant get recipe")
         }

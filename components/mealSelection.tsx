@@ -49,9 +49,9 @@ export default function MealSelection({household, date, selection, id}:Selection
 
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) =>{
    e.preventDefault();
-
+  
    try {
-    const res = await fetch(`/api/meal`, {
+    const res = await fetch(`${process.env.VERCEL_API}/api/meal`, {
     method: "PUT",
     headers: {'Content-Type' : 'application/json'},
     body: JSON.stringify(data)

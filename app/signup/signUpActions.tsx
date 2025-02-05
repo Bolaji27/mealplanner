@@ -12,7 +12,7 @@ export async function signUpActions(prevState:string, formData: FormData): Promi
   
 
  
-   const res = await fetch(`/api/signup`, {
+   const res = await fetch(`${process.env.VERCEL_API}/api/signup`, {
         method: "POST",
         headers: {"Content-Type":"Application/json"},
         body: JSON.stringify({firstname, lastname, email, password})

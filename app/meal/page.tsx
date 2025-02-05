@@ -46,12 +46,18 @@ export default function Meals() {
 
   useEffect(() => {
     const fetchMeals = async () => {
+     
       try {
         const res = await fetch(`/api/meal`);
-        if (res.ok) {
-          const json = await res.json();
+        if (!res.ok) {
+          throw new Error("failedError, cant get meal")
+        }
+
+        const json = await res.json();
 
           const [{ households, planner }] = json.body;
+          
+          
 
           const updatedMeals: mealState = {
             householdNo: planner.householdNo,
@@ -109,12 +115,11 @@ export default function Meals() {
                   break;
               }
             });
-            console.log(updatedMeals)
            
             setMeal(updatedMeals);
-        console.log(meal);
+     
           }
-        }
+
       } catch (error) {
         console.log(error);
       }
