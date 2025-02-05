@@ -22,7 +22,7 @@ export async function signUpActions(prevState:string, formData: FormData): Promi
        if(res.ok) {
    redirect("/meal");
   } else {
-     throw new Error("Failed to signup user");
+    return json.error;
   }
 
   
