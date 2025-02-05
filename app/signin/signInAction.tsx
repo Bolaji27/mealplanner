@@ -10,11 +10,12 @@ export async function signInAction (prevState:string, formData: FormData): Promi
 
   const res = await fetch(`${process.env.VERCEL_API}/api/signin`, {
     method: "POST",
-    headers: {"Content-Type":"Application/json"},
+    headers: {"Content-Type":"application/json"},
     body: JSON.stringify({ email, password})
    });
    if(!res.ok) {
-    throw new Error("cant log user, internal server error")
+    console.error("Signin API Error:", res.status);
+    throw new Error("cant log user, internal server errorr");
    }
     const json = await res.json();
     console.log(json);
