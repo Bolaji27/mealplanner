@@ -2,7 +2,8 @@
 import { ConnectDb } from "@/util/db";
 import User from "@/models/userModel";
 
-
+import * as jose from 'jose';
+import { NextResponse } from "next/server";
 
 
 
@@ -20,7 +21,16 @@ export async function POST (req:Request) {
     }
     const newUser = new User({firstname, lastname, email,password});
     await newUser.save();
-    return Response.json({message: "new user registered", status:200});
+    const secret = new TextEncoder().encode(process.env.JWT_SECRET
+          )
+          const alg = 'HS256'
+          
+          const token = await new jose.SignJWT({ })
+            .setProtectedHeader({ alg })
+            .setSubject(newUser.id)
+            .setExpirationTime('72h')
+            .sign(secret)
+    return NextResponse.json({message: "new user registered", token},{ status:200});
     
    } catch (error) {
     console.log(error);

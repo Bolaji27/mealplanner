@@ -9,8 +9,6 @@ export async function POST (Req: Request) {
     try {
        
         const {email, password} = await Req.json();
-        console.log("Received email:", email, "password:", password);
-
         if(!email || !password) {
             return NextResponse.json({message: "Please fill in all fields"},     { status: 400, headers: { "Content-Type": "application/json" }});
         }
@@ -26,18 +24,19 @@ export async function POST (Req: Request) {
        if(!isCorrectPassword) {
         return NextResponse.json({message: "invalid credentials, try again"}, {status:400})
        }
-    
-       const secret = new TextEncoder().encode(process.env.JWT_SECRET
-      )
-      const alg = 'HS256'
       
-      const jwt = await new jose.SignJWT({ })
-        .setProtectedHeader({ alg })
-        .setSubject(user.id)
-        .setExpirationTime('72h')
-        .sign(secret)
+        const secret = new TextEncoder().encode(process.env.JWT_SECRET
+                 )
+                 const alg = 'HS256'
+                 
+                 const token = await new jose.SignJWT({ })
+                   .setProtectedHeader({ alg })
+                   .setSubject(user.id)
+                   .setExpirationTime('72h')
+                   .sign(secret)
+       
       
-    return NextResponse.json({token:jwt});
+    return NextResponse.json({message: "signin successful", token}, {status:200});
         
     } catch (error) {
         console.log(error)

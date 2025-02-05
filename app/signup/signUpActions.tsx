@@ -1,6 +1,7 @@
 'use server'
 
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
 
 export async function signUpActions(prevState:string, formData: FormData): Promise<string> {
@@ -20,7 +21,17 @@ export async function signUpActions(prevState:string, formData: FormData): Promi
        const json = await res.json();
   
        if(res.ok) {
-   redirect("/meal");
+           const cookie = await cookies();
+            cookie.set("Authorization", json.token, {
+            secure: true,
+            httpOnly: true,
+            path: "/",
+            expires: Date.now() + 24 * 60 * 60 * 1000 * 3,
+            sameSite: "strict"
+            });
+
+            return redirect("/")
+   
   } else {
     return json.error;
   }
