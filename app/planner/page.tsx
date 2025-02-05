@@ -116,7 +116,7 @@ export default function Planner() {
     e.preventDefault();
   
     try {
-      const res = await fetch(`${process.env.VERCEL_API}/api/meal`, {
+      const res = await fetch(`https://mealplanner-umber.vercel.app/api/meal`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(Data),

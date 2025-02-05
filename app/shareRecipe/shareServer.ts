@@ -37,7 +37,7 @@ if (!image) {
   try {
 
     
-    const res = await fetch(`${process.env.VERCEL_API}/api/recipe`, {
+    const res = await fetch(`https://mealplanner-umber.vercel.app/api/recipe`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(newData)});

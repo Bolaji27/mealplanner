@@ -48,7 +48,7 @@ export default function Meals() {
     const fetchMeals = async () => {
      
       try {
-        const res = await fetch(`/api/meal`);
+        const res = await fetch(`https://mealplanner-umber.vercel.app/api/meal`);
         if (!res.ok) {
           throw new Error("failedError, cant get meal")
         }
