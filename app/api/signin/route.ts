@@ -39,5 +39,9 @@ export async function POST (Req: Request) {
         
     } catch (error) {
         console.log(error)
+        return Response.json(
+            { error: "Internal server error" }, 
+            { status: 500 }
+        );
     }
 }

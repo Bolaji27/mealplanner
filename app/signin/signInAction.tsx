@@ -7,7 +7,8 @@ export async function signInAction (prevState:string, formData: FormData): Promi
   const email = formData.get("email");
   const password = formData.get("password");
  
-  const res = await fetch(`/api/signin`, {
+   const baseUrl = process.env.VERCEL_API ?process.env.VERCEL_API: process.env.PORT 
+  const res = await fetch(`${baseUrl}/api/signin`, {
     method: "POST",
     headers: {"Content-Type":"Application/json"},
     body: JSON.stringify({ email, password})
