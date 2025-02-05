@@ -10,7 +10,7 @@ export async function signInAction (prevState:string, formData: FormData): Promi
 
   const res = await fetch(`https://mealplanner-umber.vercel.app/api/signin`, {
     method: "POST",
-    headers: {"Content-Type":"application/json"},
+    headers: {"Content-Type":"Application/json"},
     body: JSON.stringify({ email, password})
    });
    if(!res.ok) {

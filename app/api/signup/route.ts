@@ -20,7 +20,7 @@ export async function POST (req:Request) {
     }
     const newUser = new User({firstname, lastname, email,password});
     await newUser.save();
-    return Response.json({message: "new user saved", status:200});
+    return Response.json({message: "new user registered", status:200});
     
    } catch (error) {
     console.log(error);

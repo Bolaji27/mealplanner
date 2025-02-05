@@ -20,9 +20,9 @@ export async function signUpActions(prevState:string, formData: FormData): Promi
        const json = await res.json();
   
        if(res.ok) {
-   redirect("/signin");
+   redirect("/meal");
   } else {
-    return json.error;
+     throw new Error("Failed to signup user");
   }
 
   
